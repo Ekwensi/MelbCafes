@@ -1,16 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cafes</title>
-</head>
-<body>
+<% layout('layouts/boilerplate') %>
   <h1>All Cafes</h1>
+  <div>
+    <a href="/cafes/new">Add Cafe</a>
+  </div>
   <ul>
     <% for (let cafe of cafes) {%>
       <li> <a href="/cafes/<%= cafe._id%>"><%= cafe.title %></a> </li>
     <%}%>
   </ul>
-</body>
-</html>

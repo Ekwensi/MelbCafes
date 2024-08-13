@@ -1,12 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Show</title>
-</head>
-<body>
+<% layout('layouts/boilerplate') %>
   <h1><%= cafe.title %> </h1>
   <h1> <%= cafe.location%> </h1>
-</body>
-</html>
+  <img src="<%= cafe.image %>" alt="">
+  <p><%= cafe.description %></p>
+  <p>
+    <a href="/cafes/<%=cafe._id%>/edit">Edit</a>
+  </p>
+
+  <p>
+    <form action="/cafes/<%= cafe._id %>?_method=DELETE" method="POST">
+      <button> Delete </button>
+    </form>
+  </p>
+  <footer> 
+    
+    <a href="/cafes">All Cafes</a>
+  </footer>
