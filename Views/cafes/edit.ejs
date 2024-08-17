@@ -12,3 +12,45 @@
     <button> Update Cafe</button>
   </form>
   <a href="/cafes/<%= cafe._id %>">Back to Cafes</a>
+
+
+  <div class="row">
+    <h1 class="text-center">Edit Cafe</h1>
+    <div class="col-6 offset-3">
+      <form action="/cafes/<%= cafe._id %>?_method=PUT" method="POST">
+        <div class="mb-3">
+          <label class="form-label" for="title">Title</label>
+          <input class="form-control" type="text" id="title" name="cafe[title]" value= "<%=cafe.title%>">
+        </div>
+        <div class="mb-3">
+          <label class="form-label" for="location">Location</label>
+          <input class="form-control" type="text" id="location" name="cafe[location]" value="<%= cafe.location %>">
+        </div>
+        <div class="mb-3">
+          <label class="form-label" for="image">Image Url</label>
+          <input class="form-control" type="text" id="title" name="cafe[image]" value= "<%= cafe.image %>">
+        </div>
+        <div class="mb-3">
+          <label class="form-label" for="coffee">Type of Coffee</label>
+          <input class="form-control" type="text" id="coffee" name="cafe[coffee]" value="<%= cafe.coffee %>">
+        </div>
+        <div class="mb-3">
+          <label class="form-label" for="price">Coffee price</label>
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="price-label">$</span>
+            <input type="text" class="form-control" id="price" placeholder="0.00" aria-label="Username" aria-describedby="price-label"  name= "cafe[price]" value= "<%= cafe.price %>">
+          </div>
+        </div>
+       
+        <div class="mb-3">
+          <label class="form-label" for="description">Description Url</label>
+          <textarea class="form-control" type="text" id="title" name="cafe[description]"><%= cafe.description %> </textarea>
+        </div>
+        <div class="mb-3">
+          <button class="btn btn-info"> Update Cafe</button>
+        </div>
+      </form>
+      <a href="/cafes/<%= cafe._id %>">Back to Cafe</a>
+    </div>
+  </div>
+  

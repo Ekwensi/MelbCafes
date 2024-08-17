@@ -1,18 +1,29 @@
 <% layout('layouts/boilerplate') %>
-  <h1><%= cafe.title %> </h1>
-  <h1> <%= cafe.location%> </h1>
-  <img src="<%= cafe.image %>" alt="">
-  <p><%= cafe.description %></p>
-  <p>
-    <a href="/cafes/<%=cafe._id%>/edit">Edit</a>
-  </p>
 
-  <p>
-    <form action="/cafes/<%= cafe._id %>?_method=DELETE" method="POST">
-      <button> Delete </button>
-    </form>
-  </p>
-  <footer> 
-    
-    <a href="/cafes">All Cafes</a>
-  </footer>
+<div class="row">
+  <div class="col-6 offset-3">
+    <div class="card mb-3" >
+      <img src="<%= cafe.image %>" class="card-img-top" alt="">
+      <div class="card-body">
+        <h5 class="card-title"><%= cafe.title %> </h5>
+        <p class="card-text"><%= cafe.description %></p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item text-muted"><%= cafe.location%></li>
+        <li class="list-group-item">$<%= cafe.price%></li>
+        <li class="list-group-item"><%= cafe.coffee%></li>
+      </ul>
+      <div class="card-body">
+        <a class="card-link btn btn-warning" href="/cafes/<%=cafe._id%>/edit">Edit</a>
+        <form class="d-inline" action="/cafes/<%= cafe._id %>?_method=DELETE" method="POST">
+          <button class="btn btn-danger"> Delete </button>
+        </form>
+      </div>
+      <div class="card-footer ">
+        <a href="/cafes">All Cafes</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  

@@ -7,6 +7,7 @@ const CafeSchema = new Schema ({
   price: Number,
   description: String,
   location: String,
+  coffee: String
 })
 
 module.exports = mongoose.model('Cafe', CafeSchema,'cafes');
